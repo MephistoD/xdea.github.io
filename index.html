@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Navigation</title>
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top container-fluid  ">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded=“false”> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span></button>
+        <div class="navbar-collapse collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right ">
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+        </div>
+        
+    </nav>
+    <header>
+        
+        <div class="container">
+            <div class="row search-box">
+                <div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1 ">
+                        <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for..." id="q" name="wd">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-peacock" type="button" id="btn">Go!</button>
+                                </span>
+                        </div>
+                        <ul class="sltList text-left" id="result">
+                        </ul>
+                </div>
+            </div>
+            <script type="text/javascript">
+
+
+                var sq=document.getElementById('q');
+                var result=document.getElementById('result');
+                var btn=document.getElementById('btn');
+                    
+                //回调函数
+                function callback(data){
+                    var sli='';
+
+                    if(data.s.length){
+                        result.style.display='block';
+                        for(var i=0;i<data.s.length;i++){
+                        sli+='<li><a href="https://www.baidu.com/s?&wd="'+data.s[i]+'>'+data.s[i]+ '</a></li>'
+                        }
+                        result.innerHTML=sli;
+                         console.log(sli)
+                        }else{result.style.display='none'}//现有css暂不需要这个功能
+                }
+               sq.onkeyup=function(event){
+                    var val=sq.value;
+                    var str=document.createElement('script');
+                    str.src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+val+"&cb=callback";//关键字搜索api
+                    console.log(val)
+                    document.body.appendChild(str);
+                    document.body.removeChild(str);
+
+                   if(event.keyCode=='13'){
+                        gosearch();
+                   }
+               }
+               btn.onclick=function gosearch(){
+                   if(window.screen.width>768){//当屏幕物理分辨率的宽度大于768
+                       window.location.href='https://www.baidu.com/baidu?tn=monline_3_dg&ie=utf-8&wd='+sq.value;//pc页面api
+                }else{
+                    window.location.href='https://m.baidu.com/from=844b/s?word='+sq.value;//手机页面
+                }
+               }
+            
+            </script>
+            <div class="row top-use">
+                <div class="col-md-6 col-xs-8 col-md-offset-4 col-xs-offset-2">
+                    <div class="row">
+                            <div class="col-md-2 col-xs-3 text-center">
+                                    <a href="https://www.bilibili.com/">
+                                    <img src="images/bilibili.svg" alt="">
+                                    </a>
+                                    <p>bilibili</p>
+                                </div>
+                                <div class="col-md-2 col-xs-3 text-center">
+                                        <a href="https://www.zhihu.com">
+                                        <img src="images/zhihu.svg" alt="">
+                                        </a>
+                                        <p>知乎</p>
+                                    </div>
+                                <div class="col-md-2 col-xs-3 text-center">
+                                        <a href="https://github.com/">
+                                        <img src="images/Github.svg" alt="">
+                                        </a>
+                                        <p>GitHub</p>
+                                    </div>
+                                <div class="col-md-2 col-xs-3 text-center">
+                                        <a href="https://ameblo.jp/suzukaze-mayo">
+                                        <img src="images/heart.svg" alt="">
+                                        </a>
+                                        <p>Ameba</p>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <section class="common-use">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="text-center">Daily-App</h2>
+            </div>
+            <div class="row use-box">
+                <div class="col-md-3 col-xs-6 ibox">
+                    <div class="panel panel-peacock">
+                        <div class="panel-heading">视频</div>
+                        <div class="list-group">
+                            <a href="https://www.bilibili.com/" class="list-group-item">Bilibili</a>
+                            <a href="https://www.youku.com/" class="list-group-item">爱奇艺</a>
+                            <a href="https://v.qq.com/" class="list-group-item">腾讯视频</a>
+                            <a href="https://www.youku.com/" class="list-group-item">优酷</a>
+                            <a href="https://pan.baidu.com/" class="list-group-item">百度云</a>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 ibox">
+                        <div class="panel panel-peacock">
+                                <div class="panel-heading">社区</div>
+                            
+                            <div class="list-group">
+                                    <a href="https://www.zhihu.com" class="list-group-item">知乎</a>
+                                    <a href="https://tieba.baidu.com/" class="list-group-item">贴吧</a>
+                                    <a href="https://www.douban.com/" class="list-group-item">豆瓣</a>
+                                    <a href="https://www.weibo.com/" class="list-group-item">微博</a>
+                                    <a href="https://www.guokr.com/" class="list-group-item">果壳</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3 col-xs-6 ibox">
+                    <div class="panel panel-peacock">
+                        <div class="panel-heading">学习</div>
+                    
+                        <div class="list-group">
+                                <a href="#" class="list-group-item">FreeCodeCamp</a>
+                                <a href="#" class="list-group-item">牛客网</a>
+                                <a href="#" class="list-group-item">W3chool</a>
+                                <a href="#" class="list-group-item">网易公开课</a>
+                                <a href="#" class="list-group-item">TED</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 ibox">
+                    <div class="panel panel-peacock">
+                        <div class="panel-heading">前端</div>
+                        <div class="list-group">
+                                <a href="https://github.com/" class="list-group-item">GitHub</a>
+                                <a href="https://v3.bootcss.com/" class="list-group-item">Bootstrap</a>
+                                <a href="https://cn.vuejs.org/" class="list-group-item">Vue</a>
+                                <a href="https://react.docschina.org/" class="list-group-item">React</a>
+                                <a href="http://www.w3school.com.cn/" class="list-group-item">W3school</a>
+                        </div>
+                </div>
+                        
+                </div>
+            </div>
+            <div class="row use-box">
+                    <div class="col-md-3 col-xs-6 ibox">
+                            <div class="panel panel-peacock">
+                                <div class="panel-heading">邮箱</div>
+                                <div class="list-group">
+                                    <a href="https://mail.163.com/" class="list-group-item">163邮箱</a>
+                                    <a href="https://mail.qq.com/" class="list-group-item">QQ邮箱</a>
+                                    <a href="https://mail.126.com/" class="list-group-item">126邮箱</a>
+                                    <a href="https://mail.sina.com.cn/" class="list-group-item">新浪邮箱</a>
+                                    <a href="https://mail.aliyun.com/" class="list-group-item">阿里邮箱</a>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6 ibox">
+                                <div class="panel panel-peacock">
+                                        <div class="panel-heading">工具</div>
+                                    
+                                    <div class="list-group">
+                                            <a href="https://cli.im/" class="list-group-item">二维码生成</a>
+                                            <a href="https://colorhunt.co/" class="list-group-item">配色</a>
+                                            <a href="https://fanyi.baidu.com/?aldtype=16047#auto/zh" class="list-group-item">在线翻译</a>
+                                            <a href="https://cli.im/" class="list-group-item">百度地图</a>
+                                            <a href="https://www.iconfont.cn/" class="list-group-item">Iconfont</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6 ibox">
+                            <div class="panel panel-peacock">
+                                <div class="panel-heading">购物</div>
+                            
+                                <div class="list-group">
+                                        <a href="https://www.taobao.com/" class="list-group-item">淘宝</a>
+                                        <a href="https://www.jd.com/" class="list-group-item">京东</a>
+                                        <a href="https://www.tmall.com/" class="list-group-item">天猫</a>
+                                        <a href="https://www.amazon.cn/" class="list-group-item">亚马逊</a>
+                                        <a href="http://tool.manmanbuy.com/HistoryLowest.aspx" class="list-group-item">历史价格</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6 ibox">
+                            <div class="panel panel-peacock">
+                                <div class="panel-heading">搜搜</div>
+                                <div class="list-group">
+                                        <a href="http://www.pansoso.com/" class="list-group-item">盘搜搜</a>
+                                        <a href="https://www.jiumodiary.com/" class="list-group-item">鸠摩搜索</a>
+                                        <a href="https://www.xiaobd.net/" class="list-group-item">小不点搜索</a>
+                                        <a href="https://www.jianshu.com/go-wild?ac=2&url=https%3A%2F%2Fwww.yunpanjingling.com%2F" class="list-group-item">云盘精灵</a>
+                                        <a href="https://www.chongbuluo.com/" class="list-group-item">虫部落</a>
+                                </div>
+                        </div>
+           
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <footer class="text-center">
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                Copyright by Dea.
+                <span></span>
+                </div>
+            </div>
+            </div>
+    </footer>
+    
+</body>
+</html>

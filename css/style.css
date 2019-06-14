@@ -1,0 +1,118 @@
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; }
+body{font-family:Conv_DIN,Arial, Helvetica, sans-serif;font-size: 14px;overflow-x: hidden; color: #2c3e50  !important;}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,table, td, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {margin: 0;padding: 0;}
+input,select,textarea{font-size: 14px;border:none;margin: 0;padding: 0; outline: none;font-family:Conv_DIN}
+img{border: 0 none;vertical-align: middle;max-width: 100%;}
+a{color: #333;text-decoration:none;background-color:transparent;transition: 0.3s;}
+a:hover{cursor: pointer;}
+a:focus{outline:none;}
+ul, li, dl, dt, dd{list-style: none outside none;}
+h1,h2,h3{margin-top: 20px;
+    margin-bottom: 20px;}
+.panel-peacock{
+    /* border-color:#169cad; */
+    border-color: #188a983d;
+}
+.panel-peacock>.panel-heading{
+    background-image: linear-gradient(to bottom,#2eb6cc2e 0,#188a983d 100%);
+    /* border-bottom: #169cad 1px solid;
+    color: #117e8c;
+    font-family: Times New Roman;
+    font-weight: bold; */
+}
+.navbar{box-shadow: 0 2px 2px 1px rgba(0,0,0,.05); background: #ffffff;} 
+.navbar .navbar-toggle{
+    background-color: #11748a;
+    color: #fff;
+}
+
+.navbar-toggle .icon-bar{
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #ffffff;
+}
+
+
+
+
+
+header{text-align: center;
+    padding-top:100px ;
+    }
+header .search-box{
+    margin:20px 0;
+    padding: 5px 0;
+}
+header .search-box input{
+    height: 46px;
+}
+header .search-box button{
+    height: 46px;
+}
+.btn{border:none;}
+.btn-peacock{
+    background-image: linear-gradient(to bottom, #2395ad 0,#117489 100%);
+    color:#fff;
+}
+.btn-peacock:hover{
+    color:#fff;
+}
+.btn-peacock:active{
+    background-image: linear-gradient(to bottom, #2ab6ca 0,#117e8c 100%);
+}
+.btn-peacock:focus{color:#ffffff;}
+header .top-use a{width: 32px;height: 34px}
+header .top-use img{
+    max-width: 32px;
+}
+.common-use .container{
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.search-box .sltList{
+    display: none;
+    position: relative;
+    max-height: 140px;
+    border:#eee 1px solid;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.search-box .sltList li {
+    margin: 7px;
+    height: 20px;
+    background: #ffffff;
+}
+.search-box .sltList li a{
+    color:#11748a;
+
+
+}
+
+
+/* 尺寸适配 */
+@media screen and (max-width:720px){
+    .use-box>.ibox:nth-of-type(odd){
+        padding-right: 5px;
+    }
+    .use-box>.ibox:nth-of-type(even){
+        padding-left: 5px;
+    }
+    header .search-box input{
+        height: 40px;
+    }
+    header .search-box button{
+        height: 40px;
+    }
+
+    .navbar .navbar-collapse {
+        margin-top:50px;
+        background: #11748a;
+    }
+    .navbar .nav a{
+        color:#ffffff;
+    
+    }
+}
