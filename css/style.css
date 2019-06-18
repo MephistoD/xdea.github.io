@@ -74,11 +74,14 @@ header .top-use img{
 
 .search-box .sltList{
     display: none;
-    position: relative;
+    width: 96.8%;
+    position: absolute;
     max-height: 140px;
-    border:#eee 1px solid;
+    border: #eee 1px solid;
     border-radius: 4px;
     overflow: hidden;
+    background: #fff;
+    z-index: 1;
 }
 .search-box .sltList li {
     margin: 7px;
@@ -90,7 +93,7 @@ header .top-use img{
 
 
 }
-
+footer .copyright a{color: #b7b3b3;}
 
 /* 尺寸适配 */
 @media screen and (max-width:720px){

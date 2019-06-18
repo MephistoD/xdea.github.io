@@ -54,12 +54,13 @@
                     if(data.s.length){
                         result.style.display='block';
                         for(var i=0;i<data.s.length;i++){
-                        sli+='<li><a target="_blank" href="https://www.baidu.com/s?&wd="'+data.s[i]+'>'+data.s[i]+ '</a></li>'
+                        sli+='<li><a target="_blank" href="https://www.baidu.com/baidu?tn=monline_3_dg&ie=utf-8&wd=' +data.s[i]+'">'+data.s[i]+ '</a></li>'
                         }
-                        result.innerHTML=sli;
+                        result.innerHTML=sli; 
                          console.log(sli)
                         }else{result.style.display='none'}//现有css暂不需要这个功能
                 }
+                //搜索框显示相关搜索
                sq.onkeyup=function(event){
                     var val=sq.value;
                     var str=document.createElement('script');
@@ -74,9 +75,9 @@
                }
                btn.onclick=function gosearch(){
                    if(window.screen.width>768){//当屏幕物理分辨率的宽度大于768
-                    window.open='https://www.baidu.com/baidu?tn=monline_3_dg&ie=utf-8&wd='+sq.value;//pc页面api
+                    window.open('https://www.baidu.com/baidu?tn=monline_3_dg&ie=utf-8&wd='+sq.value);//pc页面api
                 }else{
-                    window.open='https://m.baidu.com/from=844b/s?word='+sq.value;//手机页面
+                    window.open('https://m.baidu.com/from=844b/s?word='+sq.value);//手机页面
                 }
                }
             
@@ -86,25 +87,25 @@
                     <div class="row">
                             <div class="col-md-2 col-xs-3 text-center">
                                     <a href="https://www.bilibili.com/" target="_blank">
-                                    <img src="images/bilibili.svg" alt="">
+                                    <img src="images/bilibili.png" alt="">
                                     </a>
                                     <p>bilibili</p>
                                 </div>
                                 <div class="col-md-2 col-xs-3 text-center" target="_blank">
                                         <a href="https://www.zhihu.com">
-                                        <img src="images/zhihu.svg" alt="">
+                                        <img src="images/zhihu.png" alt="">
                                         </a>
                                         <p>知乎</p>
                                     </div>
                                 <div class="col-md-2 col-xs-3 text-center" target="_blank">
                                         <a href="https://github.com/">
-                                        <img src="images/Github.svg" alt="">
+                                        <img src="images/Github.png" alt="">
                                         </a>
                                         <p>GitHub</p>
                                     </div>
                                 <div class="col-md-2 col-xs-3 text-center" target="_blank">
                                         <a href="https://ameblo.jp/suzukaze-mayo">
-                                        <img src="images/heart.svg" alt="">
+                                        <img src="images/heart.png" alt="">
                                         </a>
                                         <p>Ameba</p>
                                     </div>
@@ -234,8 +235,8 @@
     <footer class="text-center">
     <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                Copyright by Dea.
+                <div class="copyright col-lg-12">
+                <a href="/"></a>Copyright by Dea. </a>
                 <span></span>
                 </div>
             </div>
